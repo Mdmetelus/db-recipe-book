@@ -23,5 +23,11 @@ module.exports = {
       .where('id', id)
       .del();
   },
+  getRecipes: function() {
+    return db('recipes');
+  },
+  addRecipe: function(recipe) {
+    return DB("recipes").insert(recipe);
+  }
  
 };

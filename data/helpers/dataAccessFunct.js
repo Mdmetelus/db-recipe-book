@@ -12,6 +12,16 @@ module.exports = {
     return db('dishes')
       .where('id', id)
       .first();
-  }
+  },
+  editDish: function(id, dish) {
+    return db('dishes')
+      .where('id', id)
+      .update(dish);
+  },
+  deleteDish: function(id) {
+    return db('dishes')
+      .where('id', id)
+      .del();
+  },
  
 };

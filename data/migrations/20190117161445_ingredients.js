@@ -1,18 +1,18 @@
 
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('ingredients', function(tbl) {
-        table.increments();
+        tbl.increments();
 
-        table.integer("recipe_id")
+        tbl.integer("recipe_id")
             .unsigned()
             .references("id")
             .inTable("recipes");
 
-            table.real("quantity").notNullable();
+            tbl.real("quantity").notNullable();
 
-            table.string("measure").notNullable();
+            tbl.string("measure").notNullable();
 
-            table.string("name").notNullable();
+            tbl.string("name").notNullable();
 
             tbl.timestamp(true, true);
     });
